@@ -71,13 +71,6 @@ MODULES
    Type : "drama/user-type"
 }
 
-
-
-
-
-
-
-
 API Needed
     -> Create(director/cast/producer)
     -> Signup
@@ -102,10 +95,6 @@ Technologies
 
 Data Base
     Mongo-DB
-
-
-
-
 
 Packages 
     Mongoose
@@ -136,8 +125,8 @@ Functional details
     gender wise good and worst movie also gender + age group wise 
     A critic can only write a description and upload a video regarding a movie rating. 
 
-  Task wise timing
-      o   Setup and crud of user and other module - 1 day
-      o   Query for get different type of data - 2 day
-      o   And for testing - 1 day
-      o   Approx we need 4 day to complete all task*
+Task wise timing
+    o   Setup and crud of user and other module - 1 day
+    o   Query for get different type of data - 2 day
+    o   And for testing - 1 day
+    o   Approx we need 4 day to complete all task*
