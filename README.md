@@ -14,13 +14,9 @@ movie rating system
         firstName: "suraj",
         lastName: "abc",
         photo: "abc",
-        Address: "abc",
         Email: "abc@gmail.com",
         Password: "abc",
         Gender: "male",
-        bitrthDate: "22-02-2000",
-        phoneNumber: "1234567890",
-        isVerified: false,
         userType: "admin",
         createdAt: "22-02-2000"
     }
@@ -30,28 +26,11 @@ movie rating system
     {  
         movieName: "abc",
         Description: "abc",
-        Photo:["abc/photo.png","abc/photo.png"],
+		Poster : "img.png",
         category: [ "drama",  "thriller"],
         totalRating: 100,
         totalUser: 20,
         avgRating: 5,
-        productionHouse: "abc/id",
-        OTTplatForm: ["abc/id"],
-        cast: ["abc","abc"],
-        director:[ "abc","abc"],
-        producer: [ "abc","abc"],
-        generRating: 
-            { 
-                StroyLineUp:200,
-                character:255,
-
-            },
-        generCount: 
-            {
-                StroyLineUp:12,
-                character:12,
-
-            },
         ReleaseDate: "22-02-2000",
         createdAt: "abc"
     }
@@ -62,17 +41,10 @@ movie rating system
 
       movieId: "1234",
       UserId: "1234" ,
-      ageGroup: "18-20",
       userType: "critic",
-      CategoryWiseRating: 
-        {
-            StroyLineUp:5,
-            character:4,
-        },
       rate: "4.5",
       createdAt: "12/12/2022",
       gender: "male",
-
     }
 ```
 
@@ -87,26 +59,18 @@ movie rating system
 * Auth module
   * Sign-up
   * Sign-In
-  * forgot password
-  * change password
-  * verify email
-  
+ 
 * Movie module
   * CRUD 
   * get movie with filter like
     * top-10/worst-10 (min 1000 review needed)
     * year
     * category
-    * cast/producer/director
-  
-* User module 
-  * CRUD 
-  * Get All User by User-Type
-
+ 
 * Rating module
   * create/update/delete by user
   * other filtered query
-  
+ 
 -----
 ### **Technologies**
 
@@ -131,12 +95,12 @@ movie rating system
 ---
 ### **Functional details** 
 
- * only admin create movie/cast/director/producer
+ * only admin create movie
  * user can sign-up by it self
  * give/ update rating by logged-in user
- * get top 10 movies / it is must have at least 1000 rating 
+ * get top 10 movies / it is must have at least 10 rating 
  * get top 10 popular movie who have most rating same as 10 worst
- * get 10 worst movies/ it is must have at least 1000 rating
+ * get 10 worst movies/ it is must have at least 10 rating
  * need to apply year filter on all API
  * also add category filter
  * search movie
@@ -145,8 +109,7 @@ movie rating system
  * also have ratings by user type like normal audience and * critics and have to apply a user filter on all get queries like top 10 and worst 10 etc..
  * critic can give rating after he is verified by admin 
  * gender wise good and worst movie also gender + age group wise 
- * A critic can only write a description and upload a video regarding a movie rating. 
-
+ *  Rating distribution
 
 ---
 
@@ -157,29 +120,5 @@ movie rating system
 *  And for testing - 1 day
 *  Approx we need 4 day to complete all task*
 
----
-
-### **1000 dollar project** 
-
-* only audience and admin login
-* give only rating
-* get different type of information 
-    * normal information like top 10 worst 10 movies.
-    * get some filters like director, cast, producer, year category. 
-    * can read movie rating which given by experts (which add admin)
-
-		
-### **2500 dollar project**
-
-* audience, critic and admin login
-* give only rating + write description and also upload video of review 
-* get different type of information 
-    * normal information like top 10 worst 10 movies.
-    * get some filters like director, cast, producer, year, category + user wise rating audience and critic .
-    * Users give over all reviews and critics can give category wise reviews like character, story lineup , etc. and critics also upload video of movie reviews. 
-    * gender and age wise popular movies.
-    * get overall rating across multiple platform 
-    * can read and watch movie reviews given by critics.
-    * which category type is most liked by the viewer nowadays. 
-    * category wise movie rating given by critics.(for director/producer)
+------
 
