@@ -1,8 +1,6 @@
 # movieRating
 movie rating system 
 
-RATING APP
-
 MODULES
 
 * User
