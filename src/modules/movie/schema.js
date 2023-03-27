@@ -33,6 +33,7 @@ const movieSchema = `
     }
     extend type Mutation {
         addMovie(input:movieInput):Movie 
+        updateMovie(input:movieInput):Movie 
         deleteMovie:Boolean
     }
 `
