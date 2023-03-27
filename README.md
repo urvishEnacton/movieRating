@@ -42,13 +42,15 @@ movie rating system
         producer: [ "abc","abc"],
         generRating: 
             { 
-                thriller:200,
-                drama:255
+                StroyLineUp:200,
+                character:255,
+
             },
         generCount: 
             {
-                thriller:12,
-                drama:12 
+                StroyLineUp:12,
+                character:12,
+
             },
         ReleaseDate: "22-02-2000",
         createdAt: "abc"
@@ -64,8 +66,8 @@ movie rating system
       userType: "critic",
       CategoryWiseRating: 
         {
-            thriller:4,
-            drama: 5,
+            StroyLineUp:5,
+            character:4,
         },
       rate: "4.5",
       createdAt: "12/12/2022",
@@ -82,23 +84,29 @@ movie rating system
 ```
 ### **API Needed**
 
-* Create(director/cast/producer)
-* Signup
-* Sign-In
-* Get All User by User-Type
-* Movie
-* Create by admin
-* Update by admin
-* Delete by admin
-* get All Movies / by Category /get month and year wise
-* get top 10 high movie / get top 10 worst movie / get     month and year wise
-* top 5 movie of cast / producer / director
-* by default, some data have to insert like role and some category of  movie 
-* Rating
-* Create rating
-* Update rating
-* Delete rating
+* Auth module
+  * Sign-up
+  * Sign-In
+  * forgot password
+  * change password
+  * verify email
+  
+* Movie module
+  * CRUD 
+  * get movie with filter like
+    * top-10/worst-10 (min 1000 review needed)
+    * year
+    * category
+    * cast/producer/director
+  
+* User module 
+  * CRUD 
+  * Get All User by User-Type
 
+* Rating module
+  * create/update/delete by user
+  * other filtered query
+  
 -----
 ### **Technologies**
 
@@ -156,11 +164,9 @@ movie rating system
 * only audience and admin login
 * give only rating
 * get different type of information 
-    * without paid 
-        * normal information like top 10 worst 10 movies.
-        * get some filters like director, cast, producer, year category. 
-    * in paid plan
-        * can read movie rating which given by experts (which add admin)
+    * normal information like top 10 worst 10 movies.
+    * get some filters like director, cast, producer, year category. 
+    * can read movie rating which given by experts (which add admin)
 
 		
 ### **2500 dollar project**
@@ -168,14 +174,12 @@ movie rating system
 * audience, critic and admin login
 * give only rating + write description and also upload video of review 
 * get different type of information 
-    * without paid 
-        * normal information like top 10 worst 10 movies.
-        * get some filters like director, cast, producer, year, category + user wise rating audience and critic .
-        * Users give over all reviews and critics can give category wise reviews like character, story lineup , etc. and critics also upload video of movie reviews. 
-        * gender and age wise popular movies.
-        * get overall rating across multiple platform 
-    * in paid plan
-        * can read and watch movie reviews given by critics.
-        * which category type is most liked by the viewer nowadays. 
-        * category wise movie rating given by critics.(for director/producer)
+    * normal information like top 10 worst 10 movies.
+    * get some filters like director, cast, producer, year, category + user wise rating audience and critic .
+    * Users give over all reviews and critics can give category wise reviews like character, story lineup , etc. and critics also upload video of movie reviews. 
+    * gender and age wise popular movies.
+    * get overall rating across multiple platform 
+    * can read and watch movie reviews given by critics.
+    * which category type is most liked by the viewer nowadays. 
+    * category wise movie rating given by critics.(for director/producer)
 
