@@ -83,7 +83,7 @@ movie rating system
     }
 ```
 ### **API Needed**
-
+  
 * Auth module
   * Sign-up
   * Sign-In
