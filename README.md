@@ -18,8 +18,6 @@ movie rating system
         Email: "abc@gmail.com",
         Password: "abc",
         Gender: "male",
-        bitrthDate: "22-02-2000",
-        phoneNumber: "1234567890",
         isVerified: false,
         userType: "admin",
         createdAt: "22-02-2000"
@@ -30,28 +28,13 @@ movie rating system
     {  
         movieName: "abc",
         Description: "abc",
-        Photo:["abc/photo.png","abc/photo.png"],
+        poster:"abc/photo.png",
         category: [ "drama",  "thriller"],
         totalRating: 100,
         totalUser: 20,
         avgRating: 5,
         productionHouse: "abc/id",
         OTTplatForm: ["abc/id"],
-        cast: ["abc","abc"],
-        director:[ "abc","abc"],
-        producer: [ "abc","abc"],
-        generRating: 
-            { 
-                StroyLineUp:200,
-                character:255,
-
-            },
-        generCount: 
-            {
-                StroyLineUp:12,
-                character:12,
-
-            },
         ReleaseDate: "22-02-2000",
         createdAt: "abc"
     }
@@ -59,16 +42,10 @@ movie rating system
 #### 4. Rating
    ```JSON
     {
-
       movieId: "1234",
       UserId: "1234" ,
       ageGroup: "18-20",
       userType: "critic",
-      CategoryWiseRating: 
-        {
-            StroyLineUp:5,
-            character:4,
-        },
       rate: "4.5",
       createdAt: "12/12/2022",
       gender: "male",
@@ -87,9 +64,6 @@ movie rating system
 * Auth module
   * Sign-up
   * Sign-In
-  * forgot password
-  * change password
-  * verify email
   
 * Movie module
   * CRUD 
@@ -98,6 +72,7 @@ movie rating system
     * year
     * category
     * cast/producer/director
+    
   
 * User module 
   * CRUD 
@@ -144,8 +119,8 @@ movie rating system
  * also show age wise popular movie
  * also have ratings by user type like normal audience and * critics and have to apply a user filter on all get queries like top 10 and worst 10 etc..
  * critic can give rating after he is verified by admin 
- * gender wise good and worst movie also gender + age group wise 
- * A critic can only write a description and upload a video regarding a movie rating. 
+ * gender wise good and worst movie also gender + age group wise
+ * Rating distrubution
 
 
 ---
