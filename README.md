@@ -9,7 +9,7 @@ movie rating system
 * Category
 
 ####  1. User
-```Json
+```JSON
     {
         firstName: "suraj",
         lastName: "abc",
@@ -26,7 +26,7 @@ movie rating system
     }
 ```
 ####  2. Movie
-  ```Json
+  ```JSON
     {  
         movieName: "abc",
         Description: "abc",
@@ -57,7 +57,7 @@ movie rating system
     }
 ```
 #### 4. Rating
-   ```Json
+   ```JSON
     {
 
       movieId: "1234",
@@ -77,7 +77,7 @@ movie rating system
 ```
 
 #### 6. Category
-  ```Json
+  ```JSON
     {
         Type : "drama/user-type"
     }
@@ -125,7 +125,7 @@ movie rating system
 *  graphQL
 *  body-parser
 *  ASYNC
-*  jsonwebtoken
+*  JSONwebtoken
 *  bcryptjs
 *  mongoose-paginate-v2
 ---
