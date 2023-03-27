@@ -124,6 +124,34 @@ Functional details
     critic can give rating after he is verified by admin 
     gender wise good and worst movie also gender + age group wise 
     A critic can only write a description and upload a video regarding a movie rating. 
+    
+1000 doller 
+      only audience and admin login
+      give only rating
+      get different type of information 
+      without paid 
+      normal information like top 10 worst 10 movies.
+      get some filters like director, cast, producer, year category. 
+      in paid plan
+      can read movie rating which given by experts (which add admin)
+
+		
+2500 doller 
+      audience, critic and admin login
+      give only rating + write description and also upload video of review 
+      get different type of information 
+      without paid 
+      normal information like top 10 worst 10 movies.
+      get some filters like director, cast, producer, year, category + user wise rating audience and critic .
+      Users give over all reviews and critics can give category wise reviews like character, story lineup , etc. and critics also upload video of movie reviews. 
+      gender and age wise popular movies.
+      get overall rating across multiple platform 
+      in paid plan
+      can read and watch movie reviews given by critics.
+      which category type is most liked by the viewer nowadays. 
+      category wise movie rating given by critics.(for director/producer)
+
+
 
 Task wise timing
     o   Setup and crud of user and other module - 1 day
