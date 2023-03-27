@@ -79,23 +79,23 @@ MODULES
 
 
 API Needed
-    User
-    Create(director/cast/producer)
-    Signup
-    Sign-In
-    Get All User by User-Type
-    Movie
-    Create by admin
-    Update by admin
-    Delete by admin
-    get All Movies / by Category /get month and year wise
-    get top 10 high movie / get top 10 worst movie / get month and year wise
-    top 5 movie of cast / producer / director
-    by default, some data have to insert like role and some category of movie 
-    Rating
-    Create rating
-    Update rating
-    Delete rating
+    -> Create(director/cast/producer)
+    -> Signup
+    -> Sign-In
+    -> Get All User by User-Type
+    -> Movie
+    -> Create by admin
+    -> Update by admin
+    -> Delete by admin
+    -> get All Movies / by Category /get month and year wise
+    -> get top 10 high movie / get top 10 worst movie / get month and year wise
+    -> top 5 movie of cast / producer / director
+    -> by default, some data have to insert like role and some category of -> movie 
+    -> Rating
+    -> Create rating
+    -> Update rating
+    -> Delete rating
+
 
 Technologies
     Node.js + Apollo - Express + Graph-QL
