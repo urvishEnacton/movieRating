@@ -1,93 +1,86 @@
 # movieRating
 movie rating system 
 
-MODULES
+### **MODULES**
 
 * User
 * Movie
 * Rating
 * Category
 
-1. User
-
+####  1. User
+```Json
     {
-    * firstName: "suraj",
-    * lastName: "abc",
-    *    photo: "abc",
-    *    Address: "abc",
-    *    Email: "abc@gmail.com",
-    *    Password: "abc",
-    *    Gender: "male",
-    *    bitrthDate: "22-02-2000",
-    *    phoneNumber: "1234567890",
-    *    isVerified: false,
-    *    userType: "admin",
-    *    createdAt: "22-02-2000"
-  
+        firstName: "suraj",
+        lastName: "abc",
+        photo: "abc",
+        Address: "abc",
+        Email: "abc@gmail.com",
+        Password: "abc",
+        Gender: "male",
+        bitrthDate: "22-02-2000",
+        phoneNumber: "1234567890",
+        isVerified: false,
+        userType: "admin",
+        createdAt: "22-02-2000"
     }
-
-2. Movie
+```
+####  2. Movie
+  ```Json
+    {  
+        movieName: "abc",
+        Description: "abc",
+        Photo:["abc/photo.png","abc/photo.png"],
+        category: [ "drama",  "thriller"],
+        totalRating: 100,
+        totalUser: 20,
+        avgRating: 5,
+        productionHouse: "abc/id",
+        OTTplatForm: ["abc/id"],
+        cast: ["abc","abc"],
+        director:[ "abc","abc"],
+        producer: [ "abc","abc"],
+        generRating: 
+            { 
+                thriller:200,
+                drama:255
+            },
+        generCount: 
+            {
+                thriller:12,
+                drama:12 
+            },
+        ReleaseDate: "22-02-2000",
+        createdAt: "abc"
+    }
+```
+#### 4. Rating
+   ```Json
     {
-        
-     * movieName: "abc",
-     * Description: "abc",
-     * Photo:["abc/photo.png","abc/photo.png"],
-     * category: [ "drama",  "thriller"],
-     * totalRating: 100,
-     * totalUser: 20,
-     * avgRating: 5,
-     * productionHouse: "abc/id",
-     * OTTplatForm: ["abc/id"],
-     * cast: ["abc","abc"],
-     * director:[ "abc","abc"],
-     * producer: [ "abc","abc"],
-     * generRating: { 
 
-         thriller:200,
-        
-        drama:255
-
-         },
-      * generCount: {
-
-        thriller:12,
-
-        drama:12 
-
+      movieId: "1234",
+      UserId: "1234" ,
+      ageGroup: "18-20",
+      userType: "critic",
+      CategoryWiseRating: 
+        {
+            thriller:4,
+            drama: 5,
         },
-     * ReleaseDate: "22-02-2000",
-     * createdAt: "abc"
+      rate: "4.5",
+      createdAt: "12/12/2022",
+      gender: "male",
 
     }
+```
 
-3. Rating
+#### 6. Category
+  ```Json
     {
-
-      * movieId: "1234",
-      * UserId: "1234" ,
-      * ageGroup: "18-20",
-      * userType: "critic",
-      * CategoryWiseRating: {
-
-        thriller:4,
-
-        drama: 5,
-
-        },
-      * rate: "4.5",
-      * createdAt: "12/12/2022",
-      * gender: "male",
-
+        Type : "drama/user-type"
     }
-
-4. Category
-
-    {
-    * Type : "drama/user-type"
-    
-    }
-
-API Needed
+```
+### **API Needed**
 
 * Create(director/cast/producer)
 * Signup
@@ -106,16 +99,16 @@ API Needed
 * Update rating
 * Delete rating
 
-
-Technologies
+-----
+### **Technologies**
 
    * Node.js + Apollo - Express + Graph-QL
-
-Data Base
+----
+### **Data Base**
 
    * Mongo-DB
-
-Packages 
+---
+### **Packages** 
 
 *  Mongoose
 *  http
@@ -127,8 +120,8 @@ Packages
 *  jsonwebtoken
 *  bcryptjs
 *  mongoose-paginate-v2
-
-Functional details 
+---
+### **Functional details** 
 
  * only admin create movie/cast/director/producer
  * user can sign-up by it self
@@ -146,15 +139,19 @@ Functional details
  * gender wise good and worst movie also gender + age group wise 
  * A critic can only write a description and upload a video regarding a movie rating. 
 
-Task wise timing
 
-    o   Setup and crud of user and other module - 1 day
-    o   Query for get different type of data - 2 day
-    o   And for testing - 1 day
-    o   Approx we need 4 day to complete all task*
+---
 
+### **Task wise timing**
 
-1000 doller 
+*  Setup and crud of user and other module - 1 day
+*  Query for get different type of data - 2 day
+*  And for testing - 1 day
+*  Approx we need 4 day to complete all task*
+
+---
+
+### **1000 dollar project** 
 
 * only audience and admin login
 * give only rating
@@ -166,7 +163,7 @@ Task wise timing
         * can read movie rating which given by experts (which add admin)
 
 		
-2500 doller 
+### **2500 dollar project**
 
 * audience, critic and admin login
 * give only rating + write description and also upload video of review 
