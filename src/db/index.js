@@ -1,6 +1,3 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-const db = () => {
-    return mongoose.connect(process.env.DATABASE_URL)
-}
-module.exports = { db }
+export const db = () => mongoose.connect(process.env.DATABASE_URL);

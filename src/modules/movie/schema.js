@@ -1,32 +1,30 @@
-
-
-const movieSchema = `
+export const movieSchema = `
     type Movie {
         movieName: String
-        Description: String
+        description: String
         poster: String
         category: [String]
         totalRating: Number
         totalUser: Number
         avgRating: Number
         productionHouse: String
-        OTTplatForm: [String]
-        ReleaseDate: Date
+        OTTPlatForm: [String]
+        releaseDate: Date
         createdAt:Date
         updatedAt:Date
     }
    input movieInput {
         id:ID
         movieName: String
-        Description: String
+        description: String
         poster: String
         category: [String]
         # totalRating: Number
         # totalUser: Number
         # avgRating: Number
         productionHouse: String
-        OTTplatForm: [String]
-        ReleaseDate: Date
+        OTTPlatForm: [String]
+        releaseDate: Date
    }
     extend type Query {
         getAllMovie:[Movie]
@@ -36,6 +34,4 @@ const movieSchema = `
         updateMovie(input:movieInput):Movie 
         deleteMovie:Boolean
     }
-`
-
-module.exports = { movieSchema }
+`;

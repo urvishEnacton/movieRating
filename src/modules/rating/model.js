@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const mongoosePaginate = require('mongoose-paginate-v2');
+import mongoose from "mongoose"
+import mongoosePaginate from'mongoose-paginate-v2';
 
 const ratingSchema = mongoose.Schema({
     movieId: String,
@@ -12,5 +12,5 @@ const ratingSchema = mongoose.Schema({
 
 ratingSchema.plugin(mongoosePaginate);
 
-const Movie = mongoose.model('rating', ratingSchema);
-module.exports = { Movie }
+export const Movie = mongoose.model('rating', ratingSchema);
+

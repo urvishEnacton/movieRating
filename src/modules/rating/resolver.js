@@ -1,7 +1,7 @@
-const { combineResolvers } = require("graphql-resolvers")
-const { isAuthentication, isAdmin } = require("../../authentication");
+import { combineResolvers } from "graphql-resolvers"
+import { isAuthentication, isAdmin } from "../../authentication"
 
-const ratingQuery = {
+export const ratingQuery = {
     getAllRating: (parent, { id }, { models, me }) => {
         return new Promise(async (resolve, reject) => {
             models.Rating.find({ ...(id && { _id: id }) }, (err, res) => {
@@ -12,7 +12,7 @@ const ratingQuery = {
     }
 }
 
-const ratingMutation = {
+export const ratingMutation = {
     addRating: combineResolvers(isAdmin, async (parent, { input }, { models, me }) => {
         return new Promise((resolve, reject) => {
             models.Rating.findByIdAndUpdate(input?.id, input, { upsert: true, new: true }, (err, res) => {
@@ -33,5 +33,3 @@ const ratingMutation = {
 
 }
 
-
-module.exports = { ratingMutation, ratingQuery }

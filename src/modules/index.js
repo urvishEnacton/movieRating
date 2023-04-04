@@ -1,15 +1,15 @@
-const gql = require("graphql-tag")
-const { User, userSchema, userQuery, userMutation } = require("./user")
-const { Movie, movieSchema, movieQuery, movieMutation } = require("./movie")
-const { Rating,ratingSchema,ratingQuery,ratingMutation } = require("./rating")
+import  gql from "graphql-tag"
+import  { User, userSchema, userQuery, userMutation } from "./user"
+import  { Movie, movieSchema, movieQuery, movieMutation } from "./movie"
+import  { Rating,ratingSchema,ratingQuery,ratingMutation } from "./rating"
 
-const models = {
+export const models = {
     User,
     Movie,
     Rating
 }
 
-const typeDefs = gql`
+export const typeDefs = gql`
    	scalar Date
 	scalar JSON
 	scalar Number
@@ -17,13 +17,18 @@ const typeDefs = gql`
      type Query
      type Mutation
 
+     enum Gender {
+       MALE
+       FEMALE
+      }
+
      ${userSchema}
      ${movieSchema}
      ${ratingSchema}
 `
 
 
-const resolvers = {
+export const resolvers = {
     Query: {
         ...userQuery,
         ...movieQuery,
@@ -36,8 +41,3 @@ const resolvers = {
     }
 }
 
-module.exports = {
-    models,
-    resolvers,
-    typeDefs
-}

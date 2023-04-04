@@ -1,6 +1,6 @@
 
 
-const ratingSchema = `
+export const ratingSchema = `
     type Rating {
         movieId: String
         UserId: String
@@ -29,4 +29,3 @@ const ratingSchema = `
     }
 `
 
-module.exports = { ratingSchema }

@@ -1,20 +1,23 @@
-const mongoose = require("mongoose");
-const mongoosePaginate = require('mongoose-paginate-v2');
+import mongoose from "mongoose";
+import mongoosePaginate from "mongoose-paginate-v2";
 
-const movieSchema = mongoose.Schema({
-    movieName: String,
-    Description: String,
+const movieSchema = mongoose.Schema(
+  {
+    movieName: { type: String, index: true },
+    description: String,
     poster: String,
     category: [String],
-    totalRating: Number,
-    totalUser: Number,
-    avgRating: Number,
+    totalRating: { type: Number, default: 0 },
+    totalUser: { type: Number, default: 0 },
+    avgRating: { type: Number, default: 0 },
     productionHouse: String,
-    OTTplatForm: [String],
-    ReleaseDate: Date,
-}, { timestamps: true })
+    OTTPlatForm: [String],
+    releaseDate: Date,
+  },
+  { timestamps: true }
+);
 
 movieSchema.plugin(mongoosePaginate);
 
-const Movie = mongoose.model('movie', movieSchema);
-module.exports = { Movie }
+export const Movie = mongoose.model("movie", movieSchema);
+
