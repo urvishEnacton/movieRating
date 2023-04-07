@@ -160,10 +160,12 @@ movie rating system
     
     #### ENV-file
   ```JSON
-  	PORT=9000
+  	{ 
+	PORT=9000
 	SECRET=MoViRaTiNg@123
 	DATABASE_URL=mongodb://localhost:27017/MOVIE_RATING
 	ASSETS_STORAGE=ASSETS
 	EMAIL=admin@admin.com
 	PASSWORD=123456
+	}
 ```
