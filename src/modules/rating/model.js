@@ -1,16 +1,23 @@
-import mongoose from "mongoose"
-import mongoosePaginate from'mongoose-paginate-v2';
-
-const ratingSchema = mongoose.Schema({
-    movieId: String,
-    UserId: String,
+import mongoose from "mongoose";
+import mongoosePaginate from "mongoose-paginate";
+const ObjectId = mongoose.Schema.Types.ObjectId;
+const ratingSchema = mongoose.Schema(
+  {
+    movieId: {
+        type: ObjectId,
+        ref: "movie",
+      },
+    userId: {
+      type: ObjectId,
+      ref: "user",
+    },
     ageGroup: String,
-    userType: String,
     rate: Number,
     gender: String,
-}, { timestamps: true })
+  },
+  { timestamps: true }
+);
 
 ratingSchema.plugin(mongoosePaginate);
 
-export const Movie = mongoose.model('rating', ratingSchema);
-
+export const Rating = mongoose.model("rating", ratingSchema);

@@ -1,5 +1,6 @@
 export const userSchema = `
     type User {
+        id:ID
         firstName: String
         lastName: String
         photo: String
@@ -13,6 +14,7 @@ export const userSchema = `
         updatedAt: Date
     }
     input userInput {
+        id:ID
         firstName: String
         lastName: String
         photo: String
@@ -30,10 +32,12 @@ export const userSchema = `
 
     extend type Query {
         getAllUser:[User]
+        internalCall:[User]
     }
     extend type Mutation {
-        signUp(input:userInput):Boolean 
+        signUp(input:userInput):User
         signIn(email:String,password:String):signInRes
+        updateUser(input:userInput):User
         verifyEmail(email:String):Boolean
         deleteUser:Boolean
         fileUpload(img:String):String

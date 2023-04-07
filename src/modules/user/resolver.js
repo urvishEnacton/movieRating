@@ -3,33 +3,65 @@ import { isAuthentication, isAdmin } from "../../authentication";
 import jwt from "jsonwebtoken";
 import { fileUpload } from "../../functions/fileUpload";
 import { GraphQLError } from "graphql";
+import fetch from "node-fetch";
+import { User } from "./model";
 
 const generateToken = (user, expiresIn) => {
   return jwt.sign({ id: user.id, email: user.email }, process.env.SECRET, { expiresIn });
 };
 
 export const userQuery = {
-  getAllUser: (parent, { id }, { models, me }) => {
+  getAllUser: (parent, _, { models, me }) => {
     return new Promise(async (resolve, reject) => {
-      models.User.find({ ...(id && { _id: id }) }, (err, res) => {
-        if (err) reject(err);
-        else resolve(res);
-      });
+      console.log("-------=======-------=======----->");
+      User.find({})
+        .then((res) => {
+          // console.log("res: ", res);
+
+          resolve(res);
+        })
+        .catch((err) => reject(err));
+    });
+  },
+  
+  internalCall: () => {
+    return new Promise(async (resolve, reject) => {
+      fetch("http://localhost:4444/graphql", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query: `{   getAllUser {
+          id
+          firstName
+        }  }`,
+        }),
+      })
+        .then((response) => {
+          console.log("response: ", response.ok);
+          if (!response.ok) {
+            throw new Error(`GraphQL request failed with status ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          resolve(data.data.getAllUser);
+        })
+        .catch((e) => {
+          console.log("Error response: ", e);
+          reject(e);
+        });
     });
   },
 };
 
 export const userMutation = {
   signUp: async (parent, { input }, { models }) => {
-    console.log('input: ', input);
-    // await emailCheck(input?.email);
-    // await verifyRepeatEntry("User", { email: input?.email }, "This email is already in use")
+    // console.log("input: ", input);
     return new Promise(async (resolve, reject) => {
       models.User.create(input)
         .then((res) => {
           console.log("res: ", res);
-
-          resolve(true);
+          resolve(res);
         })
         .catch((err) => reject(err));
     });
@@ -46,6 +78,14 @@ export const userMutation = {
       user: user,
     };
   },
+
+  updateUser: combineResolvers(isAuthentication, async (parent, args, { models, me }) => {
+    return new Promise((resolve, reject) => {
+      models.User.findByIdAndUpdate(me?.id, input)
+        .then((res) => resolve(res))
+        .catch((err) => reject(err));
+    });
+  }),
 
   deleteUser: combineResolvers(isAuthentication, async (parent, args, { models, me }) => {
     return new Promise((resolve, reject) => {

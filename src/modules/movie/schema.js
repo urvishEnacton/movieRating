@@ -1,37 +1,42 @@
 export const movieSchema = `
     type Movie {
-        movieName: String
+        id:ID
+        name: String
         description: String
         poster: String
-        category: [String]
+        genre: [String]
         totalRating: Number
-        totalUser: Number
-        avgRating: Number
-        productionHouse: String
-        OTTPlatForm: [String]
-        releaseDate: Date
+        votes: Number
+        rating: Number
+        director: String
+        # OTTPlatForm: [String]
+        year: Date
         createdAt:Date
         updatedAt:Date
     }
    input movieInput {
         id:ID
-        movieName: String
+        name: String
         description: String
         poster: String
-        category: [String]
+        genre: [String]
         # totalRating: Number
-        # totalUser: Number
-        # avgRating: Number
-        productionHouse: String
-        OTTPlatForm: [String]
-        releaseDate: Date
+        # votes: Number
+        # rating: Number
+        director: String
+        # OTTPlatForm: [String]
+        year: Date
    }
+   type MoviePaginate {
+    count: Int
+    data: [Movie]
+}
     extend type Query {
-        getAllMovie:[Movie]
+        getAllMovie(page: Int, limit: Int, sort: Sort, filter:String,search: String,top:Boolean,worst:Boolean):MoviePaginate
     }
     extend type Mutation {
         addMovie(input:movieInput):Movie 
         updateMovie(input:movieInput):Movie 
-        deleteMovie:Boolean
+        deleteMovie(id:ID):Boolean
     }
 `;

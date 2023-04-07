@@ -12,6 +12,8 @@ import { db } from "./db";
 import { GraphQLError } from "graphql";
 import jwt from "jsonwebtoken";
 import { addPreData } from "./fixture";
+import mongoose from "mongoose";
+import router from "./routers";
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -41,6 +43,12 @@ const startServer = async () => {
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
   });
   await server.start();
+  app.use("/", express.static(process.env.ASSETS_STORAGE));
+  app.use(express.json({ limit: "100mb" }));
+  app.use(express.urlencoded({ extended: true, limit: "100mb" }));
+  app.use("/user", router.userRouter);
+
+
   app.use(
     "/graphql",
     cors(),
@@ -56,8 +64,8 @@ const startServer = async () => {
   );
   db()
     .then(async (res) => {
-      addPreData()
-      await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+      addPreData();
+      await new Promise((resolve) => httpServer.listen({ port: process.env.PORT || 5000 }, resolve));
       console.log(`🚀 Server ready at http://localhost:${process.env.PORT}/graphql`);
     })
     .catch((err) => {

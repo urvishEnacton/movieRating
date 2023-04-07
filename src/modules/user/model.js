@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import mongoosePaginate from "mongoose-paginate-v2";
+import mongoosePaginate from "mongoose-paginate";
 import bcrypt from "bcryptjs";
 
 const validateEmail = (email) => {

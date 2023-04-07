@@ -1,31 +1,27 @@
-
-
 export const ratingSchema = `
     type Rating {
+        id:ID
         movieId: String
-        UserId: String
+        userId: String
         ageGroup: String
-        userType: String
         rate: Number
         gender: String
-        createdat:Date
+        createdAt:Date
         updatedAt:Date
     }
    input ratingInput {
         id:ID
         movieId: String
-        UserId: String
         ageGroup: String
-        userType: String
         rate: Number
-        gender: String
    }
     extend type Query {
-        getAllRating:[Rating]
+        getAllRating(id:ID,movieId:String):[Rating]
+        ratingDiversion(movieId:ID):JSON
     }
     extend type Mutation {
         addRating(input:ratingInput):Rating 
+        updateRating(input:ratingInput):Rating 
         deleteRating:Boolean
     }
-`
-
+`;

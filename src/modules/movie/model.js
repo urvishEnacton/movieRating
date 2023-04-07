@@ -1,18 +1,18 @@
 import mongoose from "mongoose";
-import mongoosePaginate from "mongoose-paginate-v2";
+import mongoosePaginate from "mongoose-paginate";
 
 const movieSchema = mongoose.Schema(
   {
-    movieName: { type: String, index: true },
+    name: { type: String, index: true },
     description: String,
     poster: String,
-    category: [String],
+    genre: [String],
     totalRating: { type: Number, default: 0 },
-    totalUser: { type: Number, default: 0 },
-    avgRating: { type: Number, default: 0 },
-    productionHouse: String,
-    OTTPlatForm: [String],
-    releaseDate: Date,
+    votes: { type: Number, default: 0 },
+    rating: { type: Number, default: 0 },
+    director: String,
+    // OTTPlatForm: [String],
+    year: String,
   },
   { timestamps: true }
 );
