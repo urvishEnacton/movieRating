@@ -158,14 +158,12 @@ movie rating system
     * which category type is most liked by the viewer nowadays. 
     * category wise movie rating given by critics.(for director/producer)
     
-    ####  2. .ENV-file
+    #### ENV-file
   ```JSON
-    .env = {
   	PORT=9000
 	SECRET=MoViRaTiNg@123
 	DATABASE_URL=mongodb://localhost:27017/MOVIE_RATING
 	ASSETS_STORAGE=ASSETS
 	EMAIL=admin@admin.com
 	PASSWORD=123456
-    }
 ```
