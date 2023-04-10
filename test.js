@@ -56,7 +56,7 @@ const fun = (obj) => {
           ...(arr[ne[j].name] || []),
           `You have to give ${Math.abs(n)} to ${po[i].name}`,
         ];
-        //   (arr[po[i].name] || "") + `  take ${Math.abs(n)} from ${ne[j].name}`;
+        //   (arr[po[i].name] || "" + `  take ${Math.abs(n)} from ${ne[j].name}`;
         if (po[i].amount <= 0) {
           po[i].amount = 0;
           break;

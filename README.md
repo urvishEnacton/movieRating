@@ -27,15 +27,15 @@ movie rating system
   ```JSON
     {  
         movieName: "abc",
-        Description: "abc",
+        description: "abc",
         poster:"abc/photo.png",
         category: [ "drama",  "thriller"],
         totalRating: 100,
         totalUser: 20,
         avgRating: 5,
         productionHouse: "abc/id",
-        OTTplatForm: ["abc/id"],
-        ReleaseDate: "22-02-2000",
+        OTTPlatForm: ["abc/id"],
+        releaseDate: "22-02-2000",
         createdAt: "abc"
     }
 ```
@@ -157,15 +157,4 @@ movie rating system
     * can read and watch movie reviews given by critics.
     * which category type is most liked by the viewer nowadays. 
     * category wise movie rating given by critics.(for director/producer)
-    
-    #### ENV-file
-  ```JSON
-  	{ 
-	PORT=9000
-	SECRET=MoViRaTiNg@123
-	DATABASE_URL=mongodb://localhost:27017/MOVIE_RATING
-	ASSETS_STORAGE=ASSETS
-	EMAIL=admin@admin.com
-	PASSWORD=123456
-	}
-```
+
